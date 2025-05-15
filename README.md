@@ -50,22 +50,53 @@ Este projeto demonstra a integração OAuth2 com o Zoho CRM usando React + Vite 
 
 O aplicativo estará disponível em `http://localhost:5000`
 
+## Implantação na Vercel
+
+1. Faça o deploy do projeto na Vercel:
+   ```bash
+   vercel
+   ```
+
+2. Configure as variáveis de ambiente no Dashboard da Vercel:
+   - `ZOHO_CLIENT_ID`: ID do cliente Zoho
+   - `ZOHO_CLIENT_SECRET`: Segredo do cliente Zoho
+   - `ZOHO_REDIRECT_URI`: URL completa do callback (exemplo: `https://seu-app.vercel.app/auth/callback`)
+
+3. No Zoho API Console, adicione a nova URI de redirecionamento usando a URL de produção.
+
+4. Para atualizações subsequentes:
+   ```bash
+   vercel --prod
+   ```
+
+## Solução de Problemas na Vercel
+
+Se você encontrar o erro "vite: command not found" durante o deploy:
+
+1. Verifique se o arquivo `vercel.json` está configurado corretamente
+2. Certifique-se de que o script `install-all` esteja executando corretamente
+3. Confirme que a versão do Node.js na Vercel é compatível (recomendado usar Node.js 18.x)
+
 ## Funcionalidades
 
 - Autenticação OAuth2 com Zoho CRM
 - Armazenamento de tokens em memória
 - Refresh automático do access_token
 - Interface para visualização do status da conexão
+- Tratamento de erros de permissão (como `Crm_Implied_Api_Access`)
 
 ## Estrutura do Projeto
 
 ```
 .
-├── client/             # Frontend React + Vite
+├── api/                # Funções serverless para Vercel
+│   └── index.js       # Ponto de entrada API
+├── client/            # Frontend React + Vite
 │   ├── src/
 │   └── dist/          # Build do frontend
 ├── server/            # Backend Node.js + Express
-│   └── index.js      # Servidor Express
-├── .env              # Variáveis de ambiente
+│   └── index.js       # Servidor Express
+├── vercel.json        # Configuração da Vercel
+├── .env               # Variáveis de ambiente
 └── package.json
 ``` 
