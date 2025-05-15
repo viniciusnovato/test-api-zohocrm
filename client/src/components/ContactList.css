@@ -1,0 +1,179 @@
+.contact-list {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.contact-list h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.contact-list h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2196f3, #03a9f4);
+  border-radius: 2px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #2196f3;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card h3 {
+  margin: 0 0 1.2rem 0;
+  color: #2196f3;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact-card p {
+  margin: 0.7rem 0;
+  color: #555;
+  padding-left: 0.3rem;
+  border-left: 2px solid #e0e0e0;
+}
+
+.contact-info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.contact-list.loading,
+.contact-list.error,
+.contact-list.empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.contact-list.loading {
+  position: relative;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(33, 150, 243, 0.2);
+  border-radius: 50%;
+  border-top-color: #2196f3;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.retry-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.retry-button:hover {
+  background-color: #1976d2;
+  box-shadow: 0 6px 12px rgba(33, 150, 243, 0.4);
+  transform: translateY(-2px);
+}
+
+.retry-button:active {
+  transform: translateY(0);
+}
+
+.contact-list.empty p,
+.contact-list.error p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.error-icon {
+  font-size: 2.5rem;
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  color: #9e9e9e;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  color: #f44336;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.error-details {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #f44336;
+  text-align: left;
+}
+
+.error-details code {
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #e53935;
+  font-weight: bold;
+}
+
+.error-steps {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.error-steps ol {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+.error-steps li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+} 
